@@ -1,0 +1,13 @@
+mixin good-item(link, brand, image, category, name, cost)
+	.good-item
+		.good-item__wrap
+			a(href=link class='good-item__img-link')
+				img(src=image alt=category)
+				.good-item__brand #{brand}
+			.good-item__description 
+				a(href=link class='good-item__title') #{name}
+				.good-item__price 
+					span от
+					span.good-item__price-entity #{cost} 
+					span руб./шт.
+				a(href=link class='good-item__btn-link') Подробнее
