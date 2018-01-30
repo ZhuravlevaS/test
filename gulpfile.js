@@ -20,7 +20,7 @@ gulp.task("styles", function() {
 		.pipe(server.stream());
 });
 
-gulp.task("pages", function() {	
+gulp.task("pages", function() {
 	gulp.src("./source/pages/*.pug")
 		.pipe(pug({pretty: true}))
 		.pipe(gulp.dest("./public"))
@@ -28,8 +28,8 @@ gulp.task("pages", function() {
 });
 
 gulp.task("images", function() {
-	gulp.src("./img/*.jfif")	
-		.pipe(gulp.dest("./public/img"))	
+	gulp.src("./img/*")
+		.pipe(gulp.dest("./public/img"))
 });
 
 gulp.task("serve", ["styles", "pages", "images"], function() {
