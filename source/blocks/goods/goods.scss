@@ -1,0 +1,15 @@
+.goods {
+	// margin-top: 50%;
+	// transform: translateY(-50%);
+	background-image: url(img/pattern.png);
+}
+
+.goods__container {
+	min-width: 320px;
+	max-width: 1120px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	display: flex;
+}

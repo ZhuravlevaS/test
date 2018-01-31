@@ -1,1 +1,17 @@
-block goods
+- var goodList = [{id: 'fua-gra',ingredien:'фуа-гра',portion: '10',giftNum: '',giftText: 'мышь в подарок',weight: '0,5'},{id: 'fish',ingredien:'рыбой',portion: '40',giftNum: '2',giftText: 'мыши в подарок',weight: '2'},{id: 'chicken',ingredien:'курой',portion: '100',giftNum: '5',giftText: 'мышей в подарок заказчик доволен',weight: '5'}];
+
+	block goods
+		.goods
+			h1 Ты сегодня покормил кота
+			.goods__container
+
+				each good in goodList
+					include ../good-item/good-item.pug
+					+good-item(
+						good.id,
+						good.ingredien,
+						good.portion,
+						good.giftNum,
+						good.giftText,
+						good.weight
+					)

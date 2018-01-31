@@ -4,20 +4,7 @@ html(lang="ru")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		meta(charset="utf-8")
 		link(href="style.css" rel="stylesheet")
-		link(href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&amp;subset=cyrillic" rel="stylesheet")
 		title Тестовое Задание
 
 	body
-		include ../blocks/good-item/good-item.pug
-
-		-var goodList = [{link: 'https://urraa.ru/catalog/women-clothing/bluzki_rubashki/868312/', brand:'Cariba', image: 'img/img.jfif',category: 'Блузки', name: 'Блузка женская', cost: '724,54'},{link: 'https://urraa.ru/catalog/women-clothing/bluzki_rubashki/868312/', brand:'Zarra', image: 'img/img.jfif', category: 'Блузки', name: 'Блузка женская в цветочек', cost: '755,34'}];
-
-		each good in goodList
-			+good-item(
-				good.link,
-				good.brand,
-				good.image,
-				good.category,
-				good.name,
-				good.cost
-			)
+		include ../blocks/goods/goods.pug
