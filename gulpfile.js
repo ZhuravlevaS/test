@@ -32,7 +32,12 @@ gulp.task("images", function() {
 		.pipe(gulp.dest("./public/img"))
 });
 
-gulp.task("serve", ["styles", "pages", "images"], function() {
+gulp.task("fonts", function() {
+	gulp.src("./source/font/*")
+		.pipe(gulp.dest("./public/font"))
+});
+
+gulp.task("serve", ["fonts", "styles", "pages", "images"], function() {
   server.init({
     server: "public",
     notify: false,

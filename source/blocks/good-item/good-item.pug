@@ -4,15 +4,16 @@ mixin good-item(id, ingredien, portion, giftNum, giftText, weight)
 			input.good-item__input(type='checkbox' id=id name=id)
 			label.good-item__label(for=id)
 				p.good-item__category Сказочное заморское яство
-				p.good-item__title Нямушка
+				p.good-item__title Нямушка</br>
 					span с #{ingredien}
 				.good-item__description
-					p
-						span.good-item__number #{portion}
-					p
-						span.good-item__number #{giftNum}#{giftText}
-				img(src='img/cat.png' alt='котик')
-				p.good-item__weight #{weight} 
-					span кг
+					p #{portion} 
+						span порций
+					p #{giftNum} 
+						span #{giftText}
+				p.good-item__weight 
+					span.good-item__weight-num #{weight}
+					</br>
+					span.good-item__weight-kg кг
 		p.good-item__subtitle Чего сидишь? Порадуй котэ 
 			a.good-item__link купи.

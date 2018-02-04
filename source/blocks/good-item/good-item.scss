@@ -4,20 +4,94 @@
 // $main-color: rgb(255, 150, 1);
 // $btn-color: #fff; 
 
-$color-default: #1698d9;
-$color-hover: #2ea8e6;
-$color-selected: #d91667;
-$color-selected-hover: #e62e7a;
-$color-desabled: #b3b3b3;
-$bg-desabled: #f2f2f2;
-$white: #fff;
-$black: #000;
 
 .good-item {
+	position: relative;
 	width: 320px;
+	margin: 0 20px;
+	border-radius: 10px;
+}
+
+.good-item__input {
+	position: absolute;
+	z-index: -1;
+	border: none;
+	background: transparent;
+	top: 0;
+	left: 0;
+}
+
+.good-item__label {
+	display: block;
 	min-height: 480px;
-	border-radious: 10px;
-	border: 4px solid $color-default;
+	overflow: hidden;
+	position: relative;
+	padding: 20px 45px 250px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	background-image: linear-gradient(to bottom, transparent 0, transparent 20px, $color-default 20px, $color-default 100%),
+	linear-gradient(to right, transparent 0, transparent 20px, $color-default 20px, $color-default 100%),
+	url('img/cat.png'),
+	linear-gradient(135deg, transparent 0, transparent 30px, $color-default 30px,$color-default 34px, $white 34px, $white 100%);
+	background-size: 4px 100%,100% 4px,auto, 100% 100%;
+	background-position: 0 0, 0 0,-30px 180% ,0 0;
+	background-repeat: no-repeat;
+	font-family: $trebuchet-font;
+	border-bottom: 4px solid $color-default;
+	border-right: 4px solid $color-default;
+
+	& p {
+		margin: 0;
+	}
+}
+
+.good-item__category {
+	font-size: 16px;
+}
+
+.good-item__title {
+	color: $black;
+	font-size: 48px;
+	font-weight: 700;
+
+	& span {
+		font-size: 24px;
+	}
+}
+
+.good-item__description {
+	font-weight: 700;
+	max-width: 140px;
+
+	& span {
+		font-weight: 400;
+	}
+}
+
+.good-item__weight {
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	padding: 10px 0;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: $color-default;
+	bottom: 15px;
+	right: 15px;
+	text-align: center;
+	color: $white;
+
+	&-num {
+		font-size: 42px;
+		line-height: 42px;
+	}
+	
+	&-kg {
+		font-size: 21px;
+		line-height: 21px;
+	}
+
 }
 
 // .good-item {
