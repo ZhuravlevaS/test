@@ -5,7 +5,7 @@
 	align-items: center;
 	flex-direction: column;
 	background-image: url(img/pattern.png);
-	font-family: $exo-font;
+	font-family: $trebuchet-font;
 	font-size: 14px;
 	font-weight: 100;
 	color: $color-font;
@@ -23,6 +23,7 @@
 }
 
 .goods__title {
+	font-family: $exo-font;
 	font-weight: 100;
 	text-align: center;
 	color: $white;
