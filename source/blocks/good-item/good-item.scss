@@ -19,6 +19,63 @@
 	background: transparent;
 	top: 0;
 	left: 0;
+
+	&:checked + .good-item__label {
+		background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-selected 41px, $color-selected 100%),
+			linear-gradient(to right, transparent 0, transparent 41px, $color-selected 41px, $color-selected 100%),
+			url('img/cat.png'),
+			linear-gradient(135deg, transparent 0, transparent 30px, $color-selected 30px,$color-selected 34px, $white 34px, $white 100%);
+		border-bottom: 4px solid $color-selected;
+		border-right: 4px solid $color-selected;
+
+		&:hover {
+			background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-selected-hover 41px, $color-selected-hover 100%),
+							linear-gradient(to right, transparent 0, transparent 41px, $color-selected-hover 41px, $color-selected-hover 100%),
+							url('img/cat.png'),
+							linear-gradient(135deg, transparent 0, transparent 30px, $color-selected-hover 30px,$color-selected-hover 34px, $white 34px, $white 100%);
+			border-bottom: 4px solid $color-selected-hover;
+			border-right: 4px solid $color-selected-hover;
+		}
+	}
+
+	&:checked + .good-item__label .good-item__weight {
+		background-color: $color-selected;
+	}
+
+	&:checked + .good-item__label:hover .good-item__weight {
+		background-color: $color-selected-hover;
+	}
+
+	&:disabled + .good-item__label {
+		cursor: none;
+		background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-desabled 41px, $color-desabled 100%),
+			linear-gradient(to right, transparent 0, transparent 41px, $color-desabled 41px, $color-desabled 100%),
+			url('img/cat.png'),
+			linear-gradient(135deg, transparent 0, transparent 30px, $color-desabled 30px,$color-desabled 34px, $white 34px, $white 100%);
+		border-bottom: 4px solid $color-desabled;
+		border-right: 4px solid $color-desabled;
+
+		& .good-item__title,
+		& .good-item__ingredien {
+			color: $color-font;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-image: linear-gradient(135deg, transparent 0, transparent 30px, $bg-desabled 30px, $bg-desabled 100%);
+		}
+	}
+
+	&:disabled + .good-item__label .good-item__weight {
+		background-color: $color-desabled;
+	}
 }
 
 .good-item__label {
@@ -26,45 +83,65 @@
 	min-height: 480px;
 	overflow: hidden;
 	position: relative;
-	padding: 20px 45px 250px;
+	padding: 23px 46px 250px;
 	box-sizing: border-box;
 	border-radius: 10px;
-	background-image: linear-gradient(to bottom, transparent 0, transparent 20px, $color-default 20px, $color-default 100%),
-	linear-gradient(to right, transparent 0, transparent 20px, $color-default 20px, $color-default 100%),
-	url('img/cat.png'),
-	linear-gradient(135deg, transparent 0, transparent 30px, $color-default 30px,$color-default 34px, $white 34px, $white 100%);
+	cursor: pointer;
+	background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-default 41px, $color-default 100%),
+					linear-gradient(to right, transparent 0, transparent 41px, $color-default 41px, $color-default 100%),
+					url('img/cat.png'),
+					linear-gradient(135deg, transparent 0, transparent 30px, $color-default 30px,$color-default 34px, $white 34px, $white 100%);
 	background-size: 4px 100%,100% 4px,auto, 100% 100%;
-	background-position: 0 0, 0 0,-30px 180% ,0 0;
+	background-position: 0 0, 0 0, -24px 180% ,0 0;
 	background-repeat: no-repeat;
 	border-bottom: 4px solid $color-default;
 	border-right: 4px solid $color-default;
 
-	& p {
-		margin: 0;
+	&:hover {
+		background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-hover 41px, $color-hover 100%),
+			linear-gradient(to right, transparent 0, transparent 41px, $color-hover 41px, $color-hover 100%),
+			url('img/cat.png'),
+			linear-gradient(135deg, transparent 0, transparent 30px, $color-hover 30px,$color-hover 34px, $white 34px, $white 100%);
+		border-bottom: 4px solid $color-hover;
+		border-right: 4px solid $color-hover;
 	}
+	&:hover .good-item__weight {
+		background-color: $color-hover;
+	}
+
 }
 
 .good-item__category {
 	font-size: 16px;
+	margin: 0 0 5px;
 }
 
 .good-item__title {
 	color: $black;
 	font-size: 48px;
 	font-weight: 700;
+	letter-spacing: 2px;
+	margin: 0;
+}
 
-	& span {
-		font-size: 24px;
-	}
+.good-item__ingredien {
+	color: $black;
+	font-size: 24px;
+	letter-spacing: 1px;
+	margin: 0 0 14px;
 }
 
 .good-item__description {
-	font-weight: 700;
 	max-width: 140px;
-
+	padding-left: 3px;
+	
+	& p {
+		margin: 0;
+		font-weight: 700;
+	}	
 	& span {
 		font-weight: 400;
-	}
+	}	
 }
 
 .good-item__weight {
@@ -72,12 +149,13 @@
 	display: block;
 	box-sizing: border-box;
 	padding: 10px 0;
+	margin: 0;
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
 	background-color: $color-default;
-	bottom: 15px;
-	right: 15px;
+	bottom: 11px;
+	right: 11px;
 	text-align: center;
 	color: $white;
 
@@ -91,4 +169,23 @@
 		line-height: 21px;
 	}
 
+}
+
+.good-item__subtitle {
+	margin: 15px 0;
+	font-size: 13px;
+	text-align: center;
+	color: $white;
+
+	&--disabled {
+		color: $color-font-disabled;
+	}
+}
+
+.good-item__link {
+	display: inline-block;
+	color: $color-default;
+	text-decoration: none;
+	border-bottom: 1px dashed $color-default;
+	font-size: inherit;
 }

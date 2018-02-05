@@ -37,7 +37,12 @@ gulp.task("fonts", function() {
 		.pipe(gulp.dest("./public/font"))
 });
 
-gulp.task("serve", ["fonts", "styles", "pages", "images"], function() {
+gulp.task("script", function () {
+	gulp.src("./source/js/*")
+		.pipe(gulp.dest("./public/js"))
+});
+
+gulp.task("serve", ["fonts", "styles", "pages", "images", "script"], function() {
   server.init({
     server: "public",
     notify: false,
@@ -48,6 +53,7 @@ gulp.task("serve", ["fonts", "styles", "pages", "images"], function() {
 
   gulp.watch("./source/**/*.scss", ["styles"]);
   gulp.watch("./source/**/*.pug", ["pages"]).on("change", server.reload);
+	gulp.watch("./source/**/*.js", ["script"]).on("change", server.reload);
 });
 
 gulp.task("default", ["serve"]);

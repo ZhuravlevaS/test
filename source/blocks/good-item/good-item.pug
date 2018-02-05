@@ -1,11 +1,12 @@
-mixin good-item(id, ingredien, portion, giftNum, giftText, weight)
+doctype html
+mixin good-item(activity, checked, id, ingredien, portion, giftNum, giftText, weight, textSelected)
 	.good-item
 		.good-item__wrap
-			input.good-item__input(type='checkbox' id=id name=id)
+			input.good-item__input(disabled=activity checked=checked type='checkbox' id=id name=id)
 			label.good-item__label(for=id)
 				p.good-item__category Сказочное заморское яство
 				p.good-item__title Нямушка</br>
-					span с #{ingredien}
+				p.good-item__ingredien с #{ingredien}
 				.good-item__description
 					p #{portion} 
 						span порций
@@ -15,5 +16,8 @@ mixin good-item(id, ingredien, portion, giftNum, giftText, weight)
 					span.good-item__weight-num #{weight}
 					</br>
 					span.good-item__weight-kg кг
-		p.good-item__subtitle Чего сидишь? Порадуй котэ 
-			a.good-item__link(href='#') купи.
+			p.good-item__subtitle.good-item__subtitle--default Чего сидишь? Порадуй котэ 
+				a.good-item__link(href='#') купи.
+			p.good-item__subtitle.good-item__subtitle--disabled.hidden Печалька, c #{ingredien} закончился.
+			p.good-item__subtitle.good-item__subtitle--selected.hidden #{textSelected} 
+
