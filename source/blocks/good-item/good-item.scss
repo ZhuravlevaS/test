@@ -7,13 +7,23 @@
 
 .good-item {
 	position: relative;
-	width: 320px;
-	margin-right: 80px;
+	width: 300px;
 	border-radius: 10px;
-}
+	margin-bottom: 15px;
 
-.good-item:nth-child(3n) {
-	margin-right: 0;
+	@media (min-width: 375px) {
+		width: 320px;
+		margin: 0 20px;
+	}
+
+	@media (min-width: 1120px) {
+		margin: 0;
+		margin-right: 20px;
+
+		.good-item:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
 }
 
 .good-item__input {
@@ -28,7 +38,7 @@
 		background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-selected 41px, $color-selected 100%),
 			linear-gradient(to right, transparent 0, transparent 41px, $color-selected 41px, $color-selected 100%),
 			url('img/cat.png'),
-			linear-gradient(135deg, transparent 0, transparent 30px, $color-selected 30px,$color-selected 34px, $white 34px, $white 100%);
+			linear-gradient(135deg, transparent 0, transparent 29px, $color-selected 29px,$color-selected 34px, $white 34px, $white 100%);
 		border-bottom: 4px solid $color-selected;
 		border-right: 4px solid $color-selected;
 
@@ -36,7 +46,7 @@
 			background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-selected-hover 41px, $color-selected-hover 100%),
 							linear-gradient(to right, transparent 0, transparent 41px, $color-selected-hover 41px, $color-selected-hover 100%),
 							url('img/cat.png'),
-							linear-gradient(135deg, transparent 0, transparent 30px, $color-selected-hover 30px,$color-selected-hover 34px, $white 34px, $white 100%);
+							linear-gradient(135deg, transparent 0, transparent 29px, $color-selected-hover 29px,$color-selected-hover 34px, $white 34px, $white 100%);
 			border-bottom: 4px solid $color-selected-hover;
 			border-right: 4px solid $color-selected-hover;
 		}
@@ -55,7 +65,7 @@
 		background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-desabled 41px, $color-desabled 100%),
 			linear-gradient(to right, transparent 0, transparent 41px, $color-desabled 41px, $color-desabled 100%),
 			url('img/cat.png'),
-			linear-gradient(135deg, transparent 0, transparent 30px, $color-desabled 30px,$color-desabled 34px, $white 34px, $white 100%);
+			linear-gradient(135deg, transparent 0, transparent 29px, $color-desabled 29px,$color-desabled 34px, $white 34px, $white 100%);
 		border-bottom: 4px solid $color-desabled;
 		border-right: 4px solid $color-desabled;
 
@@ -67,13 +77,14 @@
 		&:before {
 			content: '';
 			display: block;
+			border-radius: 4px;
 			position: absolute;
 			z-index: 1;
-			top: 0;
+			top: 4px;
 			bottom: 0;
-			left: 0;
+			left: 4px;
 			right: 0;
-			background-image: linear-gradient(135deg, transparent 0, transparent 30px, $bg-desabled 30px, $bg-desabled 100%);
+			background-image: linear-gradient(135deg, transparent 0, transparent 29px, $bg-desabled 29px, $bg-desabled 100%);
 		}
 	}
 
@@ -87,7 +98,7 @@
 	min-height: 480px;
 	overflow: hidden;
 	position: relative;
-	padding: 23px 46px 250px;
+	padding: 20px 40px 250px;
 	margin-bottom: 15px;;
 	box-sizing: border-box;
 	border-radius: 10px;
@@ -95,7 +106,7 @@
 	background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-default 41px, $color-default 100%),
 					linear-gradient(to right, transparent 0, transparent 41px, $color-default 41px, $color-default 100%),
 					url('img/cat.png'),
-					linear-gradient(135deg, transparent 0, transparent 30px, $color-default 30px,$color-default 34px, $white 34px, $white 100%);
+					linear-gradient(135deg, transparent 0, transparent 29px, $color-default 29px,$color-default 34px, $white 34px, $white 100%);
 	background-size: 4px 100%,100% 4px,auto, 100% 100%;
 	background-position: 0 0, 0 0, -24px 180% ,0 0;
 	background-repeat: no-repeat;
@@ -106,7 +117,7 @@
 		background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-hover 41px, $color-hover 100%),
 			linear-gradient(to right, transparent 0, transparent 41px, $color-hover 41px, $color-hover 100%),
 			url('img/cat.png'),
-			linear-gradient(135deg, transparent 0, transparent 30px, $color-hover 30px,$color-hover 34px, $white 34px, $white 100%);
+			linear-gradient(135deg, transparent 0, transparent 29px, $color-hover 29px,$color-hover 34px, $white 34px, $white 100%);
 		border-bottom: 4px solid $color-hover;
 		border-right: 4px solid $color-hover;
 	}
@@ -114,6 +125,9 @@
 		background-color: $color-hover;
 	}
 
+	@media (min-width: 375px) {
+		padding: 23px 46px 250px;
+	}
 }
 
 .good-item__category {

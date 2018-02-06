@@ -1,36 +1,40 @@
 'use strict'
 
 var goods = document.querySelector('.goods__container')
-var inputDisabled = document.querySelector('.good-item__input:disabled');
-var inputChecked = document.querySelector('.good-item__input:checked');
+var input = document.querySelectorAll('.good-item__input');
 
-
-if (inputDisabled) {
-	var parent = inputDisabled.parentNode;
-	var textDefault = parent.querySelector('.good-item__subtitle--default');
-	var textDisabled = parent.querySelector('.good-item__subtitle--disabled');
-	
-	textDisabled.classList.remove('hidden');
-	textDefault.classList.add('hidden');
-}
-
-var getChecked = function() {
-	if (inputChecked) {
-		var parent = inputChecked.parentNode;
-		var textDefault = parent.querySelector('.good-item__subtitle--default');
-		var textSelected = parent.querySelector('.good-item__subtitle--selected');
-
-		textDefault.classList.add('hidden');
-		textSelected.classList.remove('hidden');
-	}
-}();
-
-goods.addEventListener('change', function () {
-	var parent = event.target.parentNode;
-	var textDefault = parent.querySelector('.good-item__subtitle--default');
+var getInputSelect = function(elem) {
+	var parent = elem.parentNode;
 	var textSelected = parent.querySelector('.good-item__subtitle--selected');
-
+	var textDefault = parent.querySelector('.good-item__subtitle--default');
+	
 	textDefault.classList.toggle('hidden');
 	textSelected.classList.toggle('hidden');
-})
+	
+}
+
+var getInputDisable = function (elem) {
+	var parent = elem.parentNode;
+	var textDisabled = parent.querySelector('.good-item__subtitle--disabled');
+	var textDefault = parent.querySelector('.good-item__subtitle--default');
+
+	textDefault.classList.toggle('hidden');
+	textDisabled.classList.toggle('hidden');
+
+}
+
+input.forEach(function (item) {
+	if (item.checked) {
+		getInputSelect(item);
+	} else if (item.disabled) {
+		getInputDisable(item);
+	}
+});
+
+
+goods.addEventListener('change', function () {
+	getInputSelect(event.target);
+});
+
+
 
