@@ -2,8 +2,11 @@
 	// margin-top: 50%;
 	// transform: translateY(-50%);
 	display: flex;
+	overflow: hidden;
+	height: 100vh;
 	align-items: center;
 	flex-direction: column;
+	justify-content: center;
 	background-image: url(img/pattern.png);
 	font-family: $trebuchet-font;
 	font-size: 14px;
@@ -11,15 +14,16 @@
 	color: $color-font;
 	padding-top: 60px;
 	padding-bottom: 60px;
+	box-shadow: inset 0 180px 180px 0 rgba(0, 0, 0, 0.5),
+				inset 0 -180px 180px 0 rgba(0, 0, 0, 0.5);
 }
 
 .goods__container {
 	min-width: 320px;
 	max-width: 1120px;
-	margin: 0 -40px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .goods__title {

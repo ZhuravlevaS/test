@@ -8,8 +8,12 @@
 .good-item {
 	position: relative;
 	width: 320px;
-	margin: 0 20px;
+	margin-right: 80px;
 	border-radius: 10px;
+}
+
+.good-item:nth-child(3n) {
+	margin-right: 0;
 }
 
 .good-item__input {
@@ -84,6 +88,7 @@
 	overflow: hidden;
 	position: relative;
 	padding: 23px 46px 250px;
+	margin-bottom: 15px;;
 	box-sizing: border-box;
 	border-radius: 10px;
 	cursor: pointer;
@@ -172,7 +177,6 @@
 }
 
 .good-item__subtitle {
-	margin: 15px 0;
 	font-size: 13px;
 	text-align: center;
 	color: $white;
