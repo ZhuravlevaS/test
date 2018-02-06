@@ -42,7 +42,7 @@
 		border-bottom: 4px solid $color-selected;
 		border-right: 4px solid $color-selected;
 
-		&:hover {
+		&--hover:hover {
 			background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-selected-hover 41px, $color-selected-hover 100%),
 							linear-gradient(to right, transparent 0, transparent 41px, $color-selected-hover 41px, $color-selected-hover 100%),
 							url('img/cat.png'),
@@ -56,7 +56,7 @@
 		background-color: $color-selected;
 	}
 
-	&:checked + .good-item__label:hover .good-item__weight {
+	&:checked + .good-item__label--hover:hover .good-item__weight {
 		background-color: $color-selected-hover;
 	}
 

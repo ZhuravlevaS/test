@@ -1,6 +1,6 @@
 'use strict'
 
-var goods = document.querySelector('.goods__container')
+var goods = document.querySelector('.goods__container');
 var input = document.querySelectorAll('.good-item__input');
 
 var getInputSelect = function(elem) {
@@ -33,7 +33,14 @@ input.forEach(function (item) {
 
 
 goods.addEventListener('change', function () {
+	var idElement = event.target.id;
+	var labelChecked = document.querySelector('.good-item__label[for=' + idElement + ']');
+
 	getInputSelect(event.target);
+	
+	labelChecked.addEventListener('mouseout', function() {
+		labelChecked.classList.add('good-item__label--hover');
+	})
 });
 
 
