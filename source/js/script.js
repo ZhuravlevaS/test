@@ -40,6 +40,7 @@ goods.addEventListener('change', function () {
 	
 	labelChecked.addEventListener('mouseout', function() {
 		labelChecked.classList.add('good-item__label--hover');
+		// this.removeEventListener('mouseout', labelChecked);
 	})
 });
 
