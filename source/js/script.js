@@ -43,7 +43,6 @@ goods.addEventListener('change', function (event) {
 	getInputSelect(event.target);
 
 	labelChecked.addEventListener('mouseout', handler);
-
 });
 
 

@@ -1,9 +1,11 @@
-// $block-bg: #fff; 
-// $brand-bg: rgba(240, 240, 240, 0.8); 
-// $brand-color: #1d1a1a;
-// $main-color: rgb(255, 150, 1);
-// $btn-color: #fff; 
-
+@mixin border($color, $img) {
+	background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color 41px, $color 100%),
+			linear-gradient(to right, transparent 0, transparent 41px, $color 41px, $color 100%),
+			url($img),
+			linear-gradient(135deg, transparent 0, transparent 29px, $color 29px, $color 34px, $white 34px, $white 100%);
+		border-bottom: 4px solid $color;
+		border-right: 4px solid $color;
+}
 
 .good-item {
 	position: relative;
@@ -29,26 +31,17 @@
 .good-item__input {
 	position: absolute;
 	z-index: -1;
-	border: none;
-	background: transparent;
 	top: 0;
 	left: 0;
+	border: none;
+	background: transparent;
+	
 
 	&:checked + .good-item__label {
-		background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-selected 41px, $color-selected 100%),
-			linear-gradient(to right, transparent 0, transparent 41px, $color-selected 41px, $color-selected 100%),
-			url('img/cat.png'),
-			linear-gradient(135deg, transparent 0, transparent 29px, $color-selected 29px,$color-selected 34px, $white 34px, $white 100%);
-		border-bottom: 4px solid $color-selected;
-		border-right: 4px solid $color-selected;
+		@include border($color-selected, 'img/cat.png');
 
 		&--hover:hover {
-			background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-selected-hover 41px, $color-selected-hover 100%),
-							linear-gradient(to right, transparent 0, transparent 41px, $color-selected-hover 41px, $color-selected-hover 100%),
-							url('img/cat.png'),
-							linear-gradient(135deg, transparent 0, transparent 29px, $color-selected-hover 29px,$color-selected-hover 34px, $white 34px, $white 100%);
-			border-bottom: 4px solid $color-selected-hover;
-			border-right: 4px solid $color-selected-hover;
+			@include border($color-selected-hover, 'img/cat.png');
 		}
 	}
 
@@ -61,13 +54,8 @@
 	}
 
 	&:disabled + .good-item__label {
-		cursor: none;
-		background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-desabled 41px, $color-desabled 100%),
-			linear-gradient(to right, transparent 0, transparent 41px, $color-desabled 41px, $color-desabled 100%),
-			url('img/cat.png'),
-			linear-gradient(135deg, transparent 0, transparent 29px, $color-desabled 29px,$color-desabled 34px, $white 34px, $white 100%);
-		border-bottom: 4px solid $color-desabled;
-		border-right: 4px solid $color-desabled;
+		pointer-events: none;
+		@include border($color-desabled, 'img/cat.png');
 
 		& .good-item__title,
 		& .good-item__ingredien {
@@ -76,14 +64,14 @@
 
 		&::before {
 			content: '';
-			display: block;
-			border-radius: 4px;
+			display: block;			
 			position: absolute;
 			z-index: 1;
 			top: 4px;
 			bottom: 0;
 			left: 4px;
 			right: 0;
+			border-radius: 4px;
 			background-image: linear-gradient(135deg, transparent 0, transparent 29px, $bg-desabled 29px, $bg-desabled 100%);
 		}
 	}
@@ -95,31 +83,22 @@
 
 .good-item__label {
 	display: block;
-	min-height: 480px;
 	overflow: hidden;
+	min-height: 480px;	
 	position: relative;
 	padding: 20px 40px 250px;
-	margin-bottom: 15px;;
+	margin-bottom: 15px;
 	box-sizing: border-box;
 	border-radius: 10px;
 	cursor: pointer;
-	background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-default 41px, $color-default 100%),
-					linear-gradient(to right, transparent 0, transparent 41px, $color-default 41px, $color-default 100%),
-					url('img/cat.png'),
-					linear-gradient(135deg, transparent 0, transparent 29px, $color-default 29px,$color-default 34px, $white 34px, $white 100%);
+	@include border($color-default, 'img/cat.png');
 	background-size: 4px 100%,100% 4px,auto, 100% 100%;
 	background-position: 0 0, 0 0, -24px 180% ,0 0;
 	background-repeat: no-repeat;
-	border-bottom: 4px solid $color-default;
-	border-right: 4px solid $color-default;
+
 
 	&:hover {
-		background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color-hover 41px, $color-hover 100%),
-			linear-gradient(to right, transparent 0, transparent 41px, $color-hover 41px, $color-hover 100%),
-			url('img/cat.png'),
-			linear-gradient(135deg, transparent 0, transparent 29px, $color-hover 29px,$color-hover 34px, $white 34px, $white 100%);
-		border-bottom: 4px solid $color-hover;
-		border-right: 4px solid $color-hover;
+		@include border($color-hover, 'img/cat.png');
 	}
 	&:hover .good-item__weight {
 		background-color: $color-hover;
