@@ -1,20 +1,21 @@
-doctype html
+
 mixin good-item(activity, checked, id, ingredien, portion, giftNum, giftText, weight, textSelected)
 	.good-item
 		.good-item__wrap
 			input.good-item__input(disabled=activity checked=checked type='checkbox' id=id name=id)
 			label.good-item__label(for=id)
-				p.good-item__category Сказочное заморское яство
-				p.good-item__title Нямушка</br>
-				p.good-item__ingredien с #{ingredien}
-				.good-item__description
-					p #{portion} 
-						span порций
-					p #{giftNum} 
-						span #{giftText}
-				p.good-item__weight 
+				span.good-item__category Сказочное заморское яство
+				span.good-item__title Нямушка
+				br
+				span.good-item__ingredien с #{ingredien}
+				span.good-item__description
+					span.good-item__description-num #{portion} 
+						span.good-item__description-text порций
+					span.good-item__description-num #{giftNum} 
+						span.good-item__description-text #{giftText}
+				span.good-item__weight 
 					span.good-item__weight-num #{weight}
-					</br>
+					br
 					span.good-item__weight-kg кг
 			p.good-item__subtitle.good-item__subtitle--default Чего сидишь? Порадуй котэ 
 				label.good-item__link(for=id) купи.

@@ -131,6 +131,8 @@
 }
 
 .good-item__category {
+	display: inline-block;
+	vertical-align: baseline;
 	font-size: 16px;
 	margin: 0 0 5px;
 }
@@ -151,14 +153,17 @@
 }
 
 .good-item__description {
+	display: block;
 	max-width: 140px;
 	padding-left: 3px;
 	
-	& p {
+	&-num {
+		display: inline-block;
+		vertical-align: baseline;
 		margin: 0;
 		font-weight: 700;
 	}	
-	& span {
+	&-text {
 		font-weight: 400;
 	}	
 }
