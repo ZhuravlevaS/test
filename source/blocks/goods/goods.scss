@@ -2,7 +2,7 @@
 	// margin-top: 50%;
 	// transform: translateY(-50%);
 	overflow-x: hidden;
-	height: 100vh;
+	min-height: 100vh;
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
@@ -29,12 +29,15 @@
 
 	@media (min-width: 1120px) {
 		width: 1120px;
+		margin-bottom: -30px;
 	}
 }
 
 .goods__title {
+	margin: 0 0 25px;
 	font-family: $exo-font;
 	font-weight: 100;
+	font-size: 36px;
 	text-align: center;
 	color: $white;
 }

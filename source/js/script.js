@@ -36,12 +36,14 @@ goods.addEventListener('change', function () {
 	var idElement = event.target.id;
 	var labelChecked = document.querySelector('.good-item__label[for=' + idElement + ']');
 
-	getInputSelect(event.target);
-	
-	labelChecked.addEventListener('mouseout', function() {
+	var handler = function() {
 		labelChecked.classList.add('good-item__label--hover');
-		// this.removeEventListener('mouseout', labelChecked);
-	})
+	};
+
+	getInputSelect(event.target);
+
+	labelChecked.addEventListener('mouseout', handler);
+
 });
 
 
