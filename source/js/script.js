@@ -32,7 +32,7 @@ input.forEach(function (item) {
 });
 
 
-goods.addEventListener('change', function () {
+goods.addEventListener('change', function (event) {
 	var idElement = event.target.id;
 	var labelChecked = document.querySelector('.good-item__label[for=' + idElement + ']');
 
