@@ -2,7 +2,7 @@
 
 (function () {
 	var goods = document.querySelector('.goods__container');
-	var input = document.querySelectorAll('.good-item__input');
+	var inputs = document.querySelectorAll('.good-item__input');
 
 	var getInputSelect = function(elem) {
 		var parent = elem.parentNode;
@@ -22,10 +22,11 @@
 		textDisabled.classList.toggle('hidden');
 	}
 
-	input.forEach(function (item) {
+	Array.prototype.forEach.call(inputs, function (item) {
 		if (item.checked) {
 			getInputSelect(item);
-		} else if (item.disabled) {
+		}
+		if (item.disabled) {
 			getInputDisable(item);
 		}
 	});
