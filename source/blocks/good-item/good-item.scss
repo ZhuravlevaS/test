@@ -2,7 +2,7 @@
 	background-image: linear-gradient(to bottom, transparent 0, transparent 41px, $color 41px, $color 100%),
 			linear-gradient(to right, transparent 0, transparent 41px, $color 41px, $color 100%),
 			url($img),
-			linear-gradient(135deg, transparent 0, transparent 29px, $color 29px, $color 34px, $white 34px, $white 100%);
+			linear-gradient(135deg, transparent 0, transparent 29px, $color 29px, $color 33px, $white 33px, $white 100%);
 		border-bottom: 4px solid $color;
 		border-right: 4px solid $color;
 }
@@ -22,7 +22,7 @@
 		margin: 0 20px 30px 0;
 		margin-right: 20px;
 
-		.good-item:nth-child(3n) {
+		&:nth-child(3n) {
 			margin-right: 0;
 		}
 	}
@@ -64,7 +64,7 @@
 
 		&::before {
 			content: '';
-			display: block;			
+			display: block;
 			position: absolute;
 			z-index: 1;
 			top: 4px;
@@ -84,7 +84,7 @@
 .good-item__label {
 	display: block;
 	overflow: hidden;
-	min-height: 480px;	
+	min-height: 480px;
 	position: relative;
 	padding: 20px 40px 250px;
 	margin-bottom: 15px;
@@ -125,6 +125,7 @@
 }
 
 .good-item__ingredien {
+	display: block;
 	color: $black;
 	font-size: 24px;
 	letter-spacing: 1px;
