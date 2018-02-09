@@ -4,21 +4,21 @@ mixin good-item(activity, checked, id, ingredien, portion, giftNum, giftText, we
 		.good-item__wrap
 			input.good-item__input(disabled=activity checked=checked type='checkbox' id=id name=id)
 			label.good-item__label(for=id)
-				span.good-item__category Сказочное заморское яство
-				span.good-item__title Нямушка
-				br
-				span.good-item__ingredien с #{ingredien}
-				span.good-item__description
-					span.good-item__description-num #{portion} 
+			.good-item__content
+				p.good-item__category Сказочное заморское яство
+				h2.good-item__title Нямушка
+				p.good-item__ingredien с #{ingredien}
+				.good-item__description
+					p.good-item__description-num #{portion} 
 						span.good-item__description-text порций
-					span.good-item__description-num #{giftNum} 
+					p.good-item__description-num #{giftNum} 
 						span.good-item__description-text #{giftText}
-				span.good-item__weight 
-					span.good-item__weight-num #{weight}
-					br
-					span.good-item__weight-kg кг
-			p.good-item__subtitle.good-item__subtitle--default Чего сидишь? Порадуй котэ 
-				label.good-item__link(for=id) купи.
-			p.good-item__subtitle.good-item__subtitle--disabled.hidden Печалька, c #{ingredien} закончился.
-			p.good-item__subtitle.good-item__subtitle--selected.hidden #{textSelected} 
+				.good-item__weight 
+					p.good-item__weight-num #{weight}
+					p.good-item__weight-kg кг
+			.good-item__info
+				p.good-item__subtitle.good-item__subtitle--default Чего сидишь? Порадуй котэ 
+					label.good-item__link(for=id) купи.
+				p.good-item__subtitle.good-item__subtitle--disabled.hidden Печалька, c #{ingredien} закончился.
+				p.good-item__subtitle.good-item__subtitle--selected.hidden #{textSelected} 
 

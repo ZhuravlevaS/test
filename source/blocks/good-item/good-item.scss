@@ -28,32 +28,51 @@
 	}
 }
 
+.good-item__label {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+
+	&:hover + .good-item__content {
+		@include border($color-hover, 'img/cat.png');
+
+		& .good-item__weight {
+			background-color: $color-hover;
+		}
+	}
+}
+
 .good-item__input {
 	position: absolute;
 	z-index: -1;
 	top: 0;
 	left: 0;
 	border: none;
-	background: transparent;
-	
+	background: transparent;	
 
-	&:checked + .good-item__label {
+	&:checked ~ .good-item__content {
 		@include border($color-selected, 'img/cat.png');
 
-		&--hover:hover {
-			@include border($color-selected-hover, 'img/cat.png');
+		& .good-item__weight {
+			background-color: $color-selected;
 		}
 	}
 
-	&:checked + .good-item__label .good-item__weight {
-		background-color: $color-selected;
+	&:checked + .good-item__label:hover + .good-item__content--hover {
+		@include border($color-selected-hover, 'img/cat.png');
+
+		& .good-item__weight {
+			background-color: $color-selected-hover;
+		}
 	}
 
-	&:checked + .good-item__label--hover:hover .good-item__weight {
-		background-color: $color-selected-hover;
-	}
 
-	&:disabled + .good-item__label {
+	&:disabled ~ .good-item__content {
 		pointer-events: none;
 		@include border($color-desabled, 'img/cat.png');
 
@@ -76,18 +95,23 @@
 		}
 	}
 
-	&:disabled + .good-item__label .good-item__weight {
+	&:disabled ~ .good-item__content .good-item__weight {
 		background-color: $color-desabled;
 	}
 }
 
-.good-item__label {
+.good-item__info {
+	position: relative;
+	z-index: 2;
+	padding-top: 15px;
+}
+
+.good-item__content {
 	display: block;
 	overflow: hidden;
 	min-height: 480px;
 	position: relative;
 	padding: 20px 40px 250px;
-	margin-bottom: 15px;
 	box-sizing: border-box;
 	border-radius: 10px;
 	cursor: pointer;
@@ -95,14 +119,6 @@
 	background-size: 4px 100%,100% 4px,auto, 100% 100%;
 	background-position: 0 0, 0 0, -24px 180% ,0 0;
 	background-repeat: no-repeat;
-
-
-	&:hover {
-		@include border($color-hover, 'img/cat.png');
-	}
-	&:hover .good-item__weight {
-		background-color: $color-hover;
-	}
 
 	@media (min-width: 375px) {
 		padding: 23px 46px 250px;
@@ -166,11 +182,13 @@
 	&-num {
 		font-size: 42px;
 		line-height: 42px;
+		margin: 0;
 	}
 	
 	&-kg {
 		font-size: 21px;
 		line-height: 21px;
+		margin: 0;
 	}
 
 }

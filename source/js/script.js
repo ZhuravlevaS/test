@@ -1,6 +1,6 @@
 'use strict';
 
-(function () {
+// (function () {
 	var goods = document.querySelector('.goods__container');
 	var inputs = document.querySelectorAll('.good-item__input');
 
@@ -35,13 +35,16 @@
 	goods.addEventListener('change', function (event) {
 		var idElement = event.target.id;
 		var labelChecked = document.querySelector('.good-item__label[for=' + idElement + ']');
-
+		var content = document.querySelector('.good-item__label[for=' + idElement + '] ~ .good-item__content');
+		console.log(labelChecked)
 		var handler = function() {
-			labelChecked.classList.add('good-item__label--hover');
+			content.classList.add('good-item__content--hover');
+			
+			labelChecked.removeEventListener('mouseout', handler);
 		};
 
 		getInputSelect(event.target);
 
 		labelChecked.addEventListener('mouseout', handler);
 	});
-})();
+// })();
