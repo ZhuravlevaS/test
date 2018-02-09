@@ -6,7 +6,7 @@
 
 ## Установка проекта
 
-  - Склонировать репозиторий: `git clone https://github.com/ZhuravlevaS/test.git`.
+  - Склонировать репозиторий: `git clone git@github.com:ZhuravlevaS/test.git`.
   - В папке проекта выполнить `npm install`.
   - Запустить сборку командой `npm run gulp`.
   - Страница проекта после сборки откроется автоматически.
