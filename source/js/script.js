@@ -1,6 +1,6 @@
 'use strict';
 
-// (function () {
+(function () {
 	var goods = document.querySelector('.goods__container');
 	var inputs = document.querySelectorAll('.good-item__input');
 
@@ -22,6 +22,19 @@
 		textDisabled.classList.toggle('hidden');
 	}
 
+	var addListener = function(elem) {
+		var idElement = elem.id;
+		var labelChecked = document.querySelector('.good-item__label[for=' + idElement + ']');
+		var content = document.querySelector('.good-item__label[for=' + idElement + '] ~ .good-item__content');
+
+		var handler = function () {
+			content.classList.add('good-item__content--hover');
+			labelChecked.removeEventListener('mouseout', handler);
+		};
+
+		labelChecked.addEventListener('mouseout', handler);
+	}
+
 	Array.prototype.forEach.call(inputs, function (item) {
 		if (item.checked) {
 			getInputSelect(item);
@@ -33,18 +46,7 @@
 
 
 	goods.addEventListener('change', function (event) {
-		var idElement = event.target.id;
-		var labelChecked = document.querySelector('.good-item__label[for=' + idElement + ']');
-		var content = document.querySelector('.good-item__label[for=' + idElement + '] ~ .good-item__content');
-		console.log(labelChecked)
-		var handler = function() {
-			content.classList.add('good-item__content--hover');
-			
-			labelChecked.removeEventListener('mouseout', handler);
-		};
-
 		getInputSelect(event.target);
-
-		labelChecked.addEventListener('mouseout', handler);
+		addListener(event.target);
 	});
-// })();
+})();
